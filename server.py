@@ -38,10 +38,9 @@ async def get_shortest_path(start_node_id: str, end_node_id: str):
         if path is None or len(path) == 0:
             return{"Solver Error": "Invalid start or end node ID."}
         
-        return
-    {
-            "shortest_path": <path>,
-            "total_distance": <total_distance>
+        return {
+            "shortest_path": path,
+            "total_distance": distance
      }
 
     except KeyError:
@@ -52,3 +51,6 @@ async def get_shortest_path(start_node_id: str, end_node_id: str):
 if __name__ == "__main__":
     print("Server is running at http://localhost:8080")
     uvicorn.run(app, host="0.0.0.0", port=8080)
+    
+
+
